@@ -1,6 +1,5 @@
 
 package Controller;
-import Dao.ConectaBanco;
 import Dao.LoginDao;
 import java.sql.SQLException;
 /**
@@ -15,10 +14,6 @@ public class LoginController {
         this.login = login;
         this.senha = senha;
         LoginDao testalogin = new LoginDao(this.login, this.senha);
-        if(testalogin.valida() == true){
-            return true;
-        }else{
-            return false;
-        }
+        return  testalogin.valida() == true;
     }
 }

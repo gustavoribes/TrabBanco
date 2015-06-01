@@ -1,8 +1,9 @@
 package Dao;
 
 import java.sql.*;
-import Dao.ConectaBanco;
 import javax.swing.JOptionPane;
+import View.UsuariodaSessao;
+
 /**
  *
  * @author gustavoribes
@@ -11,12 +12,11 @@ public class LoginDao {
 
     private String login;
     private String senha;
-    
+
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    
-    
+
     public LoginDao(String login, String senha) {
         this.login = login;
         this.senha = senha;
@@ -25,19 +25,20 @@ public class LoginDao {
     public boolean valida() throws SQLException, ClassNotFoundException {
         Connection con = ConectaBanco.conectabanco();
         String sql = "Select * from usuarios where login = ? and senha = ? ";
-        try{
+        try {
             pst = con.prepareStatement(sql);
-            pst.setString(1 , this.login);            
-            pst.setString(2 , this.senha);
+            pst.setString(1, this.login);
+            pst.setString(2, this.senha);
             rs = pst.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
+                UsuariodaSessao user = new UsuariodaSessao(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
                 return true;
-            }else{
+            } else {
                 return false;
             }
-        }catch(SQLException error){
-            JOptionPane.showMessageDialog(null,error);
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(null, error);
             return false;
         }
-   }
+    }
 }
