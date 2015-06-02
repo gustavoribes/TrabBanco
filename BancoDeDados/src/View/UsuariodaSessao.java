@@ -5,6 +5,9 @@
  */
 package View;
 
+import javax.xml.bind.annotation.XmlElementDecl;
+import jdk.nashorn.internal.runtime.GlobalFunctions;
+
 /**
  *
  * @author gustavoribes
@@ -17,11 +20,11 @@ package View;
  * 
  */
 public class UsuariodaSessao {
-    private int id;  
-    private String nome;    
-    private String login;    
-    private String email;  
-    private int nivel; // define se ele é usuario comum ou adm do sistema 
+    private final int id;  
+    private final String nome;    
+    private final String login;    
+    private final String email;  
+    private final int nivel; // define se ele é usuario comum ou adm do sistema 
     
     public UsuariodaSessao(int id, String nome,String login,String email,int nivel){
         this.id = id;
