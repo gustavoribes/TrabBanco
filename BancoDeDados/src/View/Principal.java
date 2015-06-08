@@ -85,9 +85,9 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 438, Short.MAX_VALUE)
         );
 
-        jMenu3.setText("Usuario");
+        jMenu3.setText("Cadastrar");
 
-        jMenuItem8.setText("Adicionar");
+        jMenuItem8.setText("Usuarios");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem8ActionPerformed(evt);
@@ -95,7 +95,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem8);
 
-        jMenuItem4.setText("Editar Perfil");
+        jMenuItem4.setText(" Musicas");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -191,9 +191,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        EditarUsuario frm = new EditarUsuario();
-        frm.setVisible(true);
-        jDesktopPane1.add(frm);
+     
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -205,8 +203,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        if (true) {
-            AddUsuario frm = new AddUsuario();
+        if (true == true) {
+            Usuarios frm = new Usuarios();
             frm.setVisible(true);
             jDesktopPane1.add(frm);
         } else{
