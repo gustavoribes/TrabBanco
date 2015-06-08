@@ -205,6 +205,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // adicionar validação pra ver se o cara é adm ou nao 
         if (true == true) {
             Usuarios frm = new Usuarios();
             frm.setVisible(true);
