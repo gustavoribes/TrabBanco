@@ -18,6 +18,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+
+        new Principal().setVisible(true);
         this.setExtendedState(MAXIMIZED_BOTH);
     }
 
@@ -191,7 +193,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-     
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -207,21 +209,12 @@ public class Principal extends javax.swing.JFrame {
             Usuarios frm = new Usuarios();
             frm.setVisible(true);
             jDesktopPane1.add(frm);
-        } else{
+        } else {
             JOptionPane.showMessageDialog(null, "Area de acesso restrito a administradores.");
         }
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
