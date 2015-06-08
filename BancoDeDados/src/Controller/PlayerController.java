@@ -17,16 +17,13 @@ public class PlayerController {
 
     PlayerDao playerdao = new PlayerDao();
 
-    public void play(int id) throws SQLException, ClassNotFoundException {
-        String diretorio = playerdao.selectmusic(id);
-        File musica = new File(diretorio);//pode ser wav ou mp3
+    public void play() throws SQLException, ClassNotFoundException {
+        //String diretorio = playerdao.selectmusic(id);
+        File musica = new File("C:\\Users\\gustavoribes\\Downloads\\Metallica - Enter Sandman [Official Music Video].MP3");//pode ser wav ou mp3
         Music track = new Music(musica);
         Play play = new Play(track);
         Thread newThrd = new Thread(play);
         newThrd.start();
-    }
-
-    public void next() {
-
+        
     }
 }
