@@ -69,4 +69,19 @@ public class UsuariosDao {
         }
     }
 
+    public ResultSet getuser(String nome) throws SQLException, ClassNotFoundException {
+
+        con = ConectaBanco.conectabanco();
+        String sql = "Select * from usuarios where nome LIKE ?";
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setString(1, nome);
+            rs = pst.executeQuery();
+            return rs;
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(null, error);
+            return null;
+        }
+    }
+
 }
