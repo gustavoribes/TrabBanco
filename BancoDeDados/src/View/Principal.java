@@ -230,7 +230,7 @@ public class Principal extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         PlayerController button = new PlayerController();
         try {
-            button.play();
+            button.play(0);
         } catch (SQLException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -274,7 +274,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
          if (true == true) {
-            Usuarios frm = new Usuarios();
+            Playlists frm = new Playlists();
             frm.setVisible(true);
             jDesktopPane1.add(frm);
         } else {

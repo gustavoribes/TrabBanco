@@ -5,8 +5,9 @@
  */
 package Controller;
 
-import Dao.PlayerDao;
+import Dao.MusicasDao;
 import java.io.File;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -15,15 +16,17 @@ import java.sql.SQLException;
  */
 public class PlayerController {
 
-    PlayerDao playerdao = new PlayerDao();
+   MusicasDao playerdao = new MusicasDao();
 
-    public void play() throws SQLException, ClassNotFoundException {
-        //String diretorio = playerdao.selectmusic(id);
+    public void play(int id) throws SQLException, ClassNotFoundException {
+        //ResultSet diretorio = playerdao.getMusica(id);
+       // diretorio.getString(0);
         File musica = new File("C:\\Users\\gustavoribes\\Downloads\\Metallica - Enter Sandman [Official Music Video].MP3");//pode ser wav ou mp3
         Music track = new Music(musica);
         Play play = new Play(track);
         Thread newThrd = new Thread(play);
         newThrd.start();
+       // newThrd.stop();
         
     }
 }
