@@ -57,6 +57,7 @@ public class Usuarios extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setTitle("Cadastro de Usuarios");
 
         jLabel1.setText("Nome");
 
