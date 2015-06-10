@@ -206,7 +206,14 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-
+        // adicionar validação pra ver se o cara é adm ou nao 
+        if (true == true) {
+            Musicas frm = new Musicas();
+            frm.setVisible(true);
+            jDesktopPane1.add(frm);
+        } else {
+            JOptionPane.showMessageDialog(null, "Area de acesso restrito a administradores.");
+        }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -227,17 +234,18 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Area de acesso restrito a administradores.");
         }
     }//GEN-LAST:event_jMenuItem8ActionPerformed
-     /*
+    /*
     
-    so para testes tirar essa merda dps
+     so para testes tirar essa merda dps
     
-    */
+     */
+
     public static void main(String[] args) {
-       java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
             }
-        }); 
+        });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
