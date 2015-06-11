@@ -262,13 +262,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        if (UsuariodaSessao.getNivel() == 1) {
-            Playlists frm = new Playlists();
-            frm.setVisible(true);
-            jDesktopPane1.add(frm);
-        } else {
-            JOptionPane.showMessageDialog(null, "Area de acesso restrito a administradores.");
-        }
+
+        Playlists frm = new Playlists();
+        frm.setVisible(true);
+        jDesktopPane1.add(frm);
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
