@@ -26,11 +26,11 @@ public class UsuariodaSessao {
     private static int nivel; // define se ele é usuario comum ou adm do sistema 
     
     public UsuariodaSessao(int id, String nome,String login,String email,int nivel){
-        this.id = id;
-        this.nome = nome;
-        this.login = login;
-        this.email = email;
-        this.nivel = nivel;     
+        UsuariodaSessao.id = id;
+        UsuariodaSessao.nome = nome;
+        UsuariodaSessao.login = login;
+        UsuariodaSessao.email = email;
+        UsuariodaSessao.nivel = nivel;     
         
     } 
 
@@ -54,23 +54,23 @@ public class UsuariodaSessao {
         UsuariodaSessao.nivel = nivel;
     }
 
-    static int getId() {
+    public static int getId() {
         return id;
     }
 
-    static String getNome() {
+    public static String getNome() {
         return nome;
     }
 
-    static String getLogin() {
+    public static String getLogin() {
         return login;
     }
 
-    static String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
-    static int getNivel() {
+    public static int getNivel() {
         return nivel;
     }
     
