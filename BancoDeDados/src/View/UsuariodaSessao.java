@@ -5,8 +5,7 @@
  */
 package View;
 
-import javax.xml.bind.annotation.XmlElementDecl;
-import jdk.nashorn.internal.runtime.GlobalFunctions;
+
 
 /**
  *
@@ -20,11 +19,11 @@ import jdk.nashorn.internal.runtime.GlobalFunctions;
  * 
  */
 public class UsuariodaSessao {
-    private final int id;  
-    private final String nome;    
-    private final String login;    
-    private final String email;  
-    private final int nivel; // define se ele é usuario comum ou adm do sistema 
+    private static int id;  
+    private static String nome;    
+    private static String login;    
+    private static String email;  
+    private static int nivel; // define se ele é usuario comum ou adm do sistema 
     
     public UsuariodaSessao(int id, String nome,String login,String email,int nivel){
         this.id = id;
@@ -35,23 +34,43 @@ public class UsuariodaSessao {
         
     } 
 
-    public int getId() {
+    public static void setId(int id) {
+        UsuariodaSessao.id = id;
+    }
+
+    public static void setNome(String nome) {
+        UsuariodaSessao.nome = nome;
+    }
+
+    public static void setLogin(String login) {
+        UsuariodaSessao.login = login;
+    }
+
+    public static void setEmail(String email) {
+        UsuariodaSessao.email = email;
+    }
+
+    public static void setNivel(int nivel) {
+        UsuariodaSessao.nivel = nivel;
+    }
+
+    static int getId() {
         return id;
     }
 
-    public String getNome() {
+    static String getNome() {
         return nome;
     }
 
-    public String getLogin() {
+    static String getLogin() {
         return login;
     }
 
-    public String getEmail() {
+    static String getEmail() {
         return email;
     }
 
-    public int getNivel() {
+    static int getNivel() {
         return nivel;
     }
     

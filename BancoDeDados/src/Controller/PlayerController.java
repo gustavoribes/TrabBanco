@@ -9,6 +9,8 @@ import Dao.MusicasDao;
 import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,17 +18,39 @@ import java.sql.SQLException;
  */
 public class PlayerController {
 
-   MusicasDao playerdao = new MusicasDao();
+    static MusicasDao playerdao = new MusicasDao();
+    static int id;
+    static Thread newThrd = null;
 
-    public void play(int id) throws SQLException, ClassNotFoundException {
-        //ResultSet diretorio = playerdao.getMusica(id);
+    public static void play(int id) throws SQLException, ClassNotFoundException {
+        PlayerController.id = id;
+       // ResultSet diretorio = playerdao.getMusica(id);
        // diretorio.getString(0);
+        newThrd.stop();
         File musica = new File("C:\\Users\\gustavoribes\\Downloads\\Metallica - Enter Sandman [Official Music Video].MP3");//pode ser wav ou mp3
         Music track = new Music(musica);
         Play play = new Play(track);
-        Thread newThrd = new Thread(play);
-        newThrd.start();
-       // newThrd.stop();
-        
+        PlayerController.newThrd = new Thread(play);
+        PlayerController.newThrd.start();
+    }
+
+    public static void pause() {
+        newThrd.stop();
+    }
+
+    public static void next() {
+        try {
+            PlayerController.play(PlayerController.id + 1);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(PlayerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static void previous() {
+        try {
+            PlayerController.play(PlayerController.id - 1);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(PlayerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

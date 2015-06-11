@@ -30,8 +30,12 @@ public class LoginDao {
             pst.setString(1, this.login);
             pst.setString(2, this.senha);
             rs = pst.executeQuery();
-            if (rs.next()) {
-                UsuariodaSessao user = new UsuariodaSessao(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
+            if (rs.next()) {                
+                UsuariodaSessao.setId(rs.getInt(1));
+                UsuariodaSessao.setNome( rs.getString(2));
+                UsuariodaSessao.setLogin(rs.getString(3));
+                UsuariodaSessao.setEmail(rs.getString(4));
+                UsuariodaSessao.setNivel( rs.getInt(5));
                 return true;
             } else {
                 return false;
