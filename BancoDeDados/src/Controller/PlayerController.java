@@ -24,9 +24,11 @@ public class PlayerController {
 
     public static void play(int id) throws SQLException, ClassNotFoundException {
         PlayerController.id = id;
-       // ResultSet diretorio = playerdao.getMusica(id);
-       // diretorio.getString(0);
-        newThrd.stop();
+        // ResultSet diretorio = playerdao.getMusica(id);
+        // diretorio.getString(0);
+        if (null != newThrd) {
+            newThrd.stop();
+        }
         File musica = new File("C:\\Users\\gustavoribes\\Downloads\\Metallica - Enter Sandman [Official Music Video].MP3");//pode ser wav ou mp3
         Music track = new Music(musica);
         Play play = new Play(track);
